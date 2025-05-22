@@ -199,6 +199,15 @@ static inline vpack_rec1_t vpack_rec1_t_init() {
     return (vpack_rec1_t){0};
 }
 /*
+*/
+static inline vpack_rec1_t vpack_rec1_load(vpack64_t v, uint32_t n) {
+  vpack_rec1_t rec = {0};
+  rec.v = v;
+  rec.offset = n*2;
+  rec.u = 1;
+  return rec;
+}
+/*
   @brief
   Data structure for a diploid genotype. `a`->`b` corresponds to the
   order in which the alleles were packed. See `vpack_rec` for details.
